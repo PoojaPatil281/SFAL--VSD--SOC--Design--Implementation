@@ -2,6 +2,6 @@
 ### Day 0 : Tool Installation
 1. Install Yosys
 2. Install iverilog
-   $ sudo apt-get update
-   $ sudo apt-get install iverilog
+  - $ sudo apt-get update
+  - $ sudo apt-get install iverilog
 
