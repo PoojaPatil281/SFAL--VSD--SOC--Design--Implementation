@@ -21,7 +21,7 @@
 3. Install gtkwave
  - $ sudo apt-get update
  - $ sudo apt install gtkwave
-
+![image](https://github.com/user-attachments/assets/eb03a0dc-4185-434b-a6c9-6e71df38e979)
 
 
 
