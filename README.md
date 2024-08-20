@@ -5,6 +5,7 @@
 - $ git clone https://github.com/YosysHQ/yosys.git
 - $ cd yosys
 - $ sudo apt-get -y install yosys
+  
   ![image](https://github.com/user-attachments/assets/f2070fe1-fc7d-4a75-bff2-667dd5aa553f)
 
 3. Install iverilog
