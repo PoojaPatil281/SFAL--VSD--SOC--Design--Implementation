@@ -11,11 +11,13 @@
 3. Install iverilog
   - $ sudo apt-get update
   - $ sudo apt-get install iverilog
+    
     ![image](https://github.com/user-attachments/assets/61149620-e0d8-42ca-95a8-73267d3adba7)
     
 3. Install gtkwave
  - $ sudo apt-get update
  - $ sudo apt install gtkwave
+   
 ![image](https://github.com/user-attachments/assets/eb03a0dc-4185-434b-a6c9-6e71df38e979)
 
 
