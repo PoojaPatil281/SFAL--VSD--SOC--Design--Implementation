@@ -8,7 +8,7 @@
   
   ![image](https://github.com/user-attachments/assets/f2070fe1-fc7d-4a75-bff2-667dd5aa553f)
 
-3. Install iverilog
+2. Install iverilog
   - $ sudo apt-get update
   - $ sudo apt-get install iverilog
     
