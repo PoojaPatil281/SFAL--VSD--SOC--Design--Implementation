@@ -4,13 +4,7 @@
 - $ sudo apt-get update
 - $ git clone https://github.com/YosysHQ/yosys.git
 - $ cd yosys
-- $ sudo apt install make (If make is not installed please install it) 
-- $ sudo apt-get install build-essential clang bison flex \
-    libreadline-dev gawk tcl-dev libffi-dev git \
-    graphviz xdot pkg-config python3 libboost-system-dev \    
-- $ make config-gcc
-- $ make 
-- $ sudo make install
+- $ sudo apt-get -y install yosys
   ![image](https://github.com/user-attachments/assets/f2070fe1-fc7d-4a75-bff2-667dd5aa553f)
 
 3. Install iverilog
