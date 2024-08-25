@@ -351,6 +351,16 @@ Synthesis of Opt_check3
 
 ![image](https://github.com/user-attachments/assets/ed0d320a-743c-4b3a-987f-eef8ef37276d)
 
+![image](https://github.com/user-attachments/assets/870192b0-29c2-40d2-9813-573431807107)
+
+![image](https://github.com/user-attachments/assets/fcf8a241-2d04-4ac0-b7ec-b4ac37f16103)
+
+![image](https://github.com/user-attachments/assets/063dd17f-3a2d-44dc-8294-7b2ebef646b1)
+
+In the above screenshot you can see the 3 input AND gate.
+
+
+
 
 
 
