@@ -191,7 +191,7 @@ Synthesis of asynchronous reset flipflop
 
 ![image](https://github.com/user-attachments/assets/b127da54-f385-4ed3-9744-620ba156f7f0)
 
-![image](https://github.com/user-attachments/assets/79973fb8-dcdb-41ea-821e-b1fc3b7e3889)
+![image](https://github.com/user-attachments/assets/79973fb8-dcdb-41ea-821e-b1fc3b7e3889) 
 
 synthesis of asynchronous set DFF :-
 
