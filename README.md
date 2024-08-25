@@ -73,7 +73,7 @@ Labs using Yosys and Sky130 PDK’s
 ![image](https://github.com/user-attachments/assets/7b3f1ed3-b047-4b07-8f52-66bd3fc7db34)
 
 # Day 2 : Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
-Lab Introduction to timing.libs
+### Lab Introduction to timing.libs
 
 Lets first understand the lib name. Here lib name is sky130_fd_sc_hd_tt_025C_1v80  where 
 - tt stands for typical
@@ -159,7 +159,7 @@ Why do we need flipflops?
 In digital circuits, glitches refers to the unnecessary signal transitions in a combinational circuit and it can occur due to the different propagation delays of the signals in the combinational circuits so to avoid glitch flipflops are used in such a way that it will give stable output at the specific clock edge  eventhough flipflop input is glitchy.
 flipflops are used in between the combinational circuits so flipflop acts as a synchronizer. To control the initial state of flipflop reset/set signals are used and this control signals can be synchronous or asynchronous.
 
-Flipflop coding styles 
+### Flipflop coding styles 
 
 ![image](https://github.com/user-attachments/assets/54d56f5e-bbf4-4537-8b74-b82131f5e07a)
 
@@ -175,7 +175,7 @@ Posedge DFF with synchronous  posedge reset : DFF output Is with respect to posi
 
 ![image](https://github.com/user-attachments/assets/30bbce5e-8156-4262-b928-ce73561910da)
 
-Lab Flop Synthesis simulations 
+### Lab Flop Synthesis simulations 
 The screenshots below shows the waveform of DFF with asynchronous reset display in gtkwave.
 
 ![image](https://github.com/user-attachments/assets/8de08a68-cf47-4478-b969-26e0a4b5b2ec)
@@ -267,7 +267,7 @@ Since the number of cells present for mapping are zero so need to perform abc ma
 
 # Day 3 : Combinational and Sequential optimization
 
-Introduction to Combinational Logic Optimization :-
+### Introduction to Combinational Logic Optimization :-
 It means Squeezing the logic to get the most optimised design in terms of Area and Power.
 Techniques used to perform combinational logic optimization are :
 - 1.	Constant Propagation : It is a Direct optimization technique.
