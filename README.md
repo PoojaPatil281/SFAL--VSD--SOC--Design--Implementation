@@ -20,5 +20,9 @@
    
 ![image](https://github.com/user-attachments/assets/eb03a0dc-4185-434b-a6c9-6e71df38e979)
 
+### Day 1 :-  Introduction to Verilog RTL design and synthesis
+# 1.	Introduction to open source simulator iverilog
+
+
 
 
