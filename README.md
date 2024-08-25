@@ -326,7 +326,7 @@ Command to do Constant Propagation and all the optimization is :- opt_clean -pur
 ![image](https://github.com/user-attachments/assets/c272540c-3f5b-4810-8b2f-0b5b97cace62)
 
 Previously Y = a ? b : 0
-After synthesis , Y = a.b
+After synthesis , Y = a.b 
 In the above screenshots you can see the AND gate. 
 
 ![image](https://github.com/user-attachments/assets/0ed8d581-d185-4a53-bb4d-adc3092ba0dd)
