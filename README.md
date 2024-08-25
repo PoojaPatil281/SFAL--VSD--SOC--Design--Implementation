@@ -29,4 +29,15 @@ Block diagram of iverilog based simulation flow.
 Design and testbench applied to the simulator and simulator checks for the changes in input and accordingly the output is evaluated and the output file is called as value change dump format file (VCD file). To view VCD file gtkwave tool is used to check the waveform.
 
 ### Labs using iverilog and gtkwave 
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+RTL code of good_mux.v
+![image](https://github.com/user-attachments/assets/627160b7-036a-4688-88ee-8b4054c153f2)
+
+Testbench of good_mux.v 
+![image](https://github.com/user-attachments/assets/af260eed-1712-41ee-8b8f-79dd2bfc9e2c)
+
+Load mux and its testbench in iverilog
+![image](https://github.com/user-attachments/assets/50c94a04-e5b4-4232-91e2-a49947a78f57)
+
+
 
