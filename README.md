@@ -76,18 +76,19 @@ Labs using Yosys and Sky130 PDK’s
 Lab Introduction to timing.libs
 
 Lets first understand the lib name. Here lib name is sky130_fd_sc_hd_tt_025C_1v80  where 
-•	tt stands for typical
-•	025C stands for temperature
-•	1v80 stands for voltage of 1.8v
+- •	tt stands for typical
+- •	025C stands for temperature
+- •	1v80 stands for voltage of 1.8v
 Libraries are characterized based on Process Voltage Temperature.
 Process : Variation due to Fabrication
 Voltage : Variation due to voltage
 Temperature : Variation due to Temperature.
 .lib contains information about :
-•	technology here technology used is cmos, delay model, units of time(ns),voltage(V),power(nW),current(mA),resistance(Kohm),capacitance(pf) ,
-•	Operating conditions (PVT) ,
-•	Information about all the standard cells and its leakage power,area,pin related information such as input capacitance,power and delay associated with that pin,
-•	timing information of cell such input transition and output load.
+- •	technology here technology used is cmos, delay model, units of time(ns),voltage(V),power(nW),current(mA),resistance(Kohm),capacitance(pf) ,
+- •	Operating conditions (PVT) ,
+- •	Information about all the standard cells and its leakage power,area,pin related information such as input capacitance,power and delay associated with that pin,
+- •	timing information of cell such input transition and output load.
+
 Observation : As the size of cell increases delay decreases, power and area increases.
 
 
@@ -148,8 +149,8 @@ Here synthesis is done at submodule1 level
 Why submodule level synthesis is needed?
 For example, consider a design called multiplier and multiplier is instantiated for a multiple times. So instead of synthesizing multiplier for multiple times we instead synthesize multiplier for one time and replicating it for multiple times and then stitched that netlist to the top level to save time.
 Module Level Synthesis is preferred when : 
-•	we have multiple instances of same module.
-•	Divide and conquer : When the design is very massive in that case we divide the design into small portion then give it to tool so that we can get appropriate netlist and then stitched that netlist to the top level.
+- •	we have multiple instances of same module.
+- •	Divide and conquer : When the design is very massive in that case we divide the design into small portion then give it to tool so that we can get appropriate netlist and then stitched that netlist to the top level.
 To synthesize the submodule Independently command used is : -
 synth -top module_name
 
@@ -269,8 +270,8 @@ Since the number of cells present for mapping are zero so need to perform abc ma
 Introduction to Combinational Logic Optimization :-
 It means Squeezing the logic to get the most optimised design in terms of Area and Power.
 Techniques used to perform combinational logic optimization are :
-1.	Constant Propagation : It is a Direct optimization technique.
-2.	Boolean Logic Optimization : It is used to simplify big Boolean logic expression using techniques like K-map, Quine McKluskey
+- 1.	Constant Propagation : It is a Direct optimization technique.
+- 2.	Boolean Logic Optimization : It is used to simplify big Boolean logic expression using techniques like K-map, Quine McKluskey
 
 Example of Constant Logic Optimization : The propagation of a constant can generate a more optimize logic.
 Previously, Y = ((AB) +C)’ -- 6 transistors required 
@@ -284,14 +285,14 @@ Boolean Logic Optimization
 
 Sequential Logic Optimization 
 Techniques of Sequential Logic Optimization are :-
-1.	Basic
-•	Sequential Constant Propagation
+- 1.	Basic
+- •	Sequential Constant Propagation
 
 
-2.	Advanced [Not Covered as part of Lab]
-•	State Optimisation
-•	Retiming
-•	Sequential Logic Cloning (Floorplan Aware Synthesis)
+- 2.	Advanced [Not Covered as part of Lab]
+- •	State Optimisation
+- •	Retiming
+- •	Sequential Logic Cloning (Floorplan Aware Synthesis)
 
 Example of Sequential constant Propagation :-
 When RST is enable Q = 0 ,
