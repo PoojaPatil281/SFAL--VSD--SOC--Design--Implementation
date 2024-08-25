@@ -359,6 +359,16 @@ Synthesis of Opt_check3
 
 In the above screenshot you can see the 3 input AND gate.
 
+Synthesis of opt_check4 
+
+![image](https://github.com/user-attachments/assets/d0833826-be2c-42d0-aa0b-acdae57f808d)
+
+![image](https://github.com/user-attachments/assets/746a4d89-1ff8-43bf-816d-6ffa4c413d5b)
+
+![image](https://github.com/user-attachments/assets/9c6117fd-6848-4b01-ab90-cd510f29c56b)
+
+![image](https://github.com/user-attachments/assets/df03b7a9-77f7-4391-8649-0848858708c1)
+
 
 
 
