@@ -155,7 +155,7 @@ To synthesize the submodule Independently command used is : -
 synth -top module_name
 
 Various Flop Coding Styles and Optimization
-Why do we need flipflops?
+- Why do we need flipflops?
 In digital circuits, glitches refers to the unnecessary signal transitions in a combinational circuit and it can occur due to the different propagation delays of the signals in the combinational circuits so to avoid glitch flipflops are used in such a way that it will give stable output at the specific clock edge  eventhough flipflop input is glitchy.
 flipflops are used in between the combinational circuits so flipflop acts as a synchronizer. To control the initial state of flipflop reset/set signals are used and this control signals can be synchronous or asynchronous.
 
