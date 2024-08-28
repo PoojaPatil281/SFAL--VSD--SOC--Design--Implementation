@@ -485,6 +485,29 @@ RTL code :-
 
 ![image](https://github.com/user-attachments/assets/1dea3231-3fac-408f-b7b3-500aab461c9b)
 
+![image](https://github.com/user-attachments/assets/9dc34c15-a9da-4edd-8377-67cb380e2da9)
+
+![image](https://github.com/user-attachments/assets/a0b4d95c-dea1-4669-ab2d-a9d8ed87b4e3)
+
+In the above screenshot you can observe that for 3 bit counter tool should have shown 3 flipflops but it has used only 1 flipflop.why?
+![image](https://github.com/user-attachments/assets/123c99f5-b194-41bb-9b70-076f7c306052)
+
+![image](https://github.com/user-attachments/assets/792bcb58-b930-4d86-8596-87a01686eeb2)
+
+![image](https://github.com/user-attachments/assets/9f5ea5b1-ce52-4a73-b5ed-fa140223a7bd)
+
+![image](https://github.com/user-attachments/assets/729b7bb6-7021-48e7-a80e-588ff41b1aa8)
+
+Here in the above screenshot you can see that output q is only sensing count[0] bit. Hence only for that 1 flipflop is used and the output of q is given to the input pin D through inverter.
+Since count[1] , count[2] bits are unused hence it is removed durring optimization.That is why only one flipflop is used in the design.
+
+
+Case 2 : All 3 bits are used hence expecting 3 flipflops in the design
+RTL code :-
+
+![image](https://github.com/user-attachments/assets/64bcd135-ad52-4a18-84ca-74ce1bffa99f)
+
+Synthesis :-
 
 
 
