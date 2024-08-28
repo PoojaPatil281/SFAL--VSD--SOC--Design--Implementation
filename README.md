@@ -434,6 +434,32 @@ In the above screenshot you can see that tool has shown 0 cells.
 
 ![image](https://github.com/user-attachments/assets/bba4ce99-b43a-4237-81f7-d5dff3c3acc6)
 
+In above screenshot you can see that irrespective of RST,CLk  Q is always 1 hence there is no need of flipflop.hence after synthesis, tools has not shown flipflop.
+
+Optimizing dff_const3.v
+RTL code of dff_const3.v:-
+
+![image](https://github.com/user-attachments/assets/b9ebc763-7602-470f-b015-630f7f589696)
+
+![image](https://github.com/user-attachments/assets/95dc6399-80b8-4b0c-b836-0f0b635fa5d8)
+
+Here when RST 1, Q1 = 0 and when RST = 0 at this edge Q1 will remain 0 till the next clock edge and at the next clock Q1 becomes  1.
+When SET = 1, Q = 1 and when SET = 0 at this clock edge Q becomes 1 till it gets next clock edge and the next clock it becomes 0 and again after once cycle Q becomes 1. So Q will always become 1 except one clock edge.
+
+![image](https://github.com/user-attachments/assets/6fc8e94f-34c9-4474-b33a-1301c05a9576)
+
+![image](https://github.com/user-attachments/assets/3ab0ff54-321b-4980-8daa-03144b268dab)
+
+Synthesis of dff_const3.v
+![image](https://github.com/user-attachments/assets/154dd972-fac1-45f4-8958-05cd9e956f70)
+
+![image](https://github.com/user-attachments/assets/3e80f113-cd12-4799-87bc-d262f0754c06)
+
+In the above scrrenshot you can see that in the statistics table,it is showing 2 flipflops.
+![image](https://github.com/user-attachments/assets/2dd24729-155b-450b-844c-a74e950ce758)
+
+![image](https://github.com/user-attachments/assets/8c3411c7-ce08-498d-b93c-cd128848052e)
+
 
 
 
