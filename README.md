@@ -460,6 +460,31 @@ In the above scrrenshot you can see that in the statistics table,it is showing 2
 
 ![image](https://github.com/user-attachments/assets/8c3411c7-ce08-498d-b93c-cd128848052e)
 
+![image](https://github.com/user-attachments/assets/8d5f611b-8ab3-499e-a02f-8d3a9db84156)
+
+![image](https://github.com/user-attachments/assets/1851ece3-921b-45dd-8dac-1b548bddbb9a)
+
+In the above scrrenshot you can see that both RESET and RST input is given through inverter and Flipflops ares also properly mapped.
+
+
+Sequential Optimization for unused optimization 
+Optimizing counter_opt.v :- 3 bit up counter
+
+![image](https://github.com/user-attachments/assets/2316c7d6-47c6-4b82-b953-b1a4781fb3db)
+
+![image](https://github.com/user-attachments/assets/3669bbc5-8864-4200-8323-6073b3047f21)
+
+Here the final output Q is sensing only count[0]. So remaining count[1] and count[2] are unused as this is the logic in design.
+when the logic which is not affecting output,need not to be present in the design.
+In the truth table also you can observe that only bits present at 0th location are used as for every bit it is toggling,remaining are not used.
+Here, Case 1 is : only at 0th possition bits are used.
+Case 2 is : All 3 bits are used.
+
+Case 1 :-
+RTL code :- 
+
+![image](https://github.com/user-attachments/assets/1dea3231-3fac-408f-b7b3-500aab461c9b)
+
 
 
 
