@@ -407,6 +407,32 @@ Here RST pin is acts like a SET. When RESET = 1,Q=1 and at the edge of the RST i
 
 Synthesis of dff_const1.v
 
+![image](https://github.com/user-attachments/assets/e955fd25-fcc0-4919-8bef-e1ce679adec0)
+
+After that use command dfflibmap -liberty lib_path.
+Since design has flipflop so we have to tell the tool that use this lib for flipflop mapping. 
+
+![image](https://github.com/user-attachments/assets/0563a7bd-af87-426c-a3dc-195514d893da)
+
+![image](https://github.com/user-attachments/assets/985f923d-5b4a-4567-8f4c-9fdb69e491c8)
+
+![image](https://github.com/user-attachments/assets/78eac9fd-51a4-4151-bf38-34e39dc95de8)
+
+![image](https://github.com/user-attachments/assets/7dc9b74c-1fae-4451-bc4b-337989d5593c)
+
+From above screenshot you can observe that, in design we make RST as active high but in lib by default RST is active low so thats why tool have given RST signal to RST pin of flipflop through inverter.
+
+Synthesis of dff_const2.v
+
+![image](https://github.com/user-attachments/assets/b0ce2548-a532-4739-9405-18ae93f98226)
+
+![image](https://github.com/user-attachments/assets/ffa7c261-17d3-4a50-8630-c3cb31eb47ba)
+
+In the above screenshot you can see that tool has shown 0 cells.
+
+![image](https://github.com/user-attachments/assets/a93f7e7f-ebb6-43bc-bfce-dfa91ca3d158)
+
+![image](https://github.com/user-attachments/assets/bba4ce99-b43a-4237-81f7-d5dff3c3acc6)
 
 
 
