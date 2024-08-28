@@ -371,6 +371,41 @@ Synthesis of opt_check4
 ![image](https://github.com/user-attachments/assets/df03b7a9-77f7-4391-8649-0848858708c1)
 
 
+Lab on Sequential Logic Optimization 
+Optimizing dff_Const1.v
+RTL code of dff_const1.v:-
+
+![image](https://github.com/user-attachments/assets/a1b567ae-2578-4317-97d3-351e64c13b79)
+
+![image](https://github.com/user-attachments/assets/d0435312-8014-4bc2-821f-fb8c8c177cb4)
+
+When RST = 1, Q = 0 else Q = 1
+Waveform :-
+
+![image](https://github.com/user-attachments/assets/f5f49072-3ff9-467d-807e-2545b96eedf3)
+
+From above screenshot you can see that when RST is 1,   Q= 0 and when RST = 0, Q will not immediately become 1 it will wait for next possitive edge to become 1.
+
+![image](https://github.com/user-attachments/assets/34b539e8-d26c-4ad0-b071-8f54d6d33174)
+
+![image](https://github.com/user-attachments/assets/ea1f6d61-c57e-441b-b438-a376205007b9)
+
+![image](https://github.com/user-attachments/assets/a1454ade-d360-499d-acbd-9a846fc9f5d2)
+
+Optimizing dff_const2.v
+RTL code of dff_const2.v:-
+
+![image](https://github.com/user-attachments/assets/8ed8eb5b-dfca-4ea9-aaa4-4b29f5dc0edd)
+
+![image](https://github.com/user-attachments/assets/98aabc48-fc25-4a96-abc1-3869644fde0c)
+
+Here RST pin is acts like a SET. When RESET = 1,Q=1 and at the edge of the RST it will become 1 and at the next edge again it becomes 1.
+
+![image](https://github.com/user-attachments/assets/0b213fb5-38ff-4677-b40c-30be872266cb)
+
+![image](https://github.com/user-attachments/assets/36245e92-1c79-4868-b9d5-0981b9603cbe)
+
+Synthesis of dff_const1.v
 
 
 
