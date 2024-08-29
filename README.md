@@ -573,4 +573,52 @@ RTL code :-
 
 ![image](https://github.com/user-attachments/assets/5676e447-4bef-4be1-ba82-ef0a65c9692a)
 
+![image](https://github.com/user-attachments/assets/e041ee35-b81b-44d9-83e5-8776bd078e86)
+
+![image](https://github.com/user-attachments/assets/254fc23b-6db2-4922-aeb5-54a619628aa9)
+
+In the above screenshot you can see that when sel = 0, y = i0 and when sel =1, y = i1.
+
+Synthesis of ternary_operator_mux.v
+
+![image](https://github.com/user-attachments/assets/a6d7490e-f302-40c5-9f34-95a13501afaf)
+
+![image](https://github.com/user-attachments/assets/eba8991f-1926-44c4-9ec3-f8d5fa7d05ab)
+
+![image](https://github.com/user-attachments/assets/2fd1a64e-597d-4495-bb28-4fa11f749fab)
+
+![image](https://github.com/user-attachments/assets/e15853da-246b-495a-995e-446cb1ec18ee)
+
+![image](https://github.com/user-attachments/assets/c0bbc69e-6cf0-4c75-85a9-713aa3ee3bf3)
+
+![image](https://github.com/user-attachments/assets/6aa8288e-ae32-4cc3-a38b-3703821f6793)
+
+Invoking GLS :-
+![image](https://github.com/user-attachments/assets/372490fb-9497-448d-aa5a-8c9ba5f26a05)
+
+![image](https://github.com/user-attachments/assets/754a6d82-7b5a-4d28-99e7-f44094bdb117)
+
+Simulation of bad_mux.v
+RTL code :-
+
+![image](https://github.com/user-attachments/assets/09c86afc-3c26-4f70-bfb4-f10ec58f6f4e)
+
+![image](https://github.com/user-attachments/assets/fc89daa2-d875-42c5-907d-e690232f9b5b)
+
+![image](https://github.com/user-attachments/assets/933bf993-f4ae-4a68-bd15-489b9089c2fa)
+
+In the above screenshot you can see that,always block executed only at sel signal because of that it works like a flop rather than mux.
+Synthesis of bad_mux.v
+
+![image](https://github.com/user-attachments/assets/26710820-64e4-4c5b-a025-3497598ad882)
+
+![image](https://github.com/user-attachments/assets/84b0fc7f-002a-4ae7-88e9-629fcccc3cef)
+
+![image](https://github.com/user-attachments/assets/7ed3827d-30c8-4eef-9839-c0780fff9a07)
+
+![image](https://github.com/user-attachments/assets/e153c316-3a33-4aaf-b616-9ffb6ec52b97)
+
+Invioking GLS :-
+![image](https://github.com/user-attachments/assets/254fa6cc-2170-43c4-9cf2-296a4cadc5e2)
+
 
