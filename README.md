@@ -621,4 +621,46 @@ Synthesis of bad_mux.v
 Invioking GLS :-
 ![image](https://github.com/user-attachments/assets/254fa6cc-2170-43c4-9cf2-296a4cadc5e2)
 
+GLS output :-
+![image](https://github.com/user-attachments/assets/86dc47a0-3d2b-45a2-8df7-0211e537206a)
+
+By comparing RTL simulation and GLS output, you can observe that in GLS output when sel is low, the activity of i0 is reflecting on y whereas in RTL simulation when sel is low,the activity of i0 is not reflecting on y. Also in GLS simulation when sel is 1, i1 is reflecting on y whereas in RTL simulation it is not reflecting. This is called synthesis simulation mismatch due to missing sensitivity list.
+Labs on Synthesis simulation mismatch for blocking statement
+Simulation of Blocking_caveat.v
+RTL code:-
+
+![image](https://github.com/user-attachments/assets/55c69983-e892-46d9-9c3c-35f341dc6735)
+
+![image](https://github.com/user-attachments/assets/be9bd0d9-f494-43db-97ce-eaf1ce388442)
+
+Simulation using iverilog :-
+![image](https://github.com/user-attachments/assets/469acbbc-e1e5-4b33-aa49-8d64cf7dc590)
+
+![image](https://github.com/user-attachments/assets/6c0937c7-017a-4fc5-91a5-cf3295b787fc)
+
+In the above screenshot you can observe that because of blocking statement, value of x is updated after evaluating d expression hence at the output expression d evaluated using old value of x.hence not getting expected output.
+
+Synthesis :-
+
+![image](https://github.com/user-attachments/assets/f8ed9ba8-a802-4e44-9e11-61c4d5b21718)
+
+![image](https://github.com/user-attachments/assets/4e0927e3-3106-4220-9caa-00182d21b774)
+
+![image](https://github.com/user-attachments/assets/7e49ddcc-a33a-4dd1-9a86-e6ea14709298)
+
+![image](https://github.com/user-attachments/assets/72688ba4-fd88-4e95-804b-8b4567b0c048)
+
+![image](https://github.com/user-attachments/assets/efcb365c-a448-46e5-8c56-ca85b46d9f2a)
+
+![image](https://github.com/user-attachments/assets/c8001d10-0c7a-4ebd-b433-1851825a7590)
+
+Invoking GLS :-
+
+![image](https://github.com/user-attachments/assets/79917dfd-6688-4d2d-9af2-658cc4d1254a)
+
+GLS output :-
+
+![image](https://github.com/user-attachments/assets/aab33ba7-0b93-4be5-bdcc-8940e42a0ad1)
+
+In the above screenshot also you can see that there is a synthesis simulation mismatch caused due to blocking statements.so use blocking statements in verilog only when it is needed otherwise can get unpredictable results. 
 
