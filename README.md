@@ -509,5 +509,68 @@ RTL code :-
 
 Synthesis :-
 
+![image](https://github.com/user-attachments/assets/6fb3163c-bbaf-4b94-9995-e167869b1224)
+
+![image](https://github.com/user-attachments/assets/2e70bb67-0824-42f8-b8f0-1253281d3185)
+
+Here as expected it is showing 3 flipflops.
+![image](https://github.com/user-attachments/assets/95717e1e-5308-4ee1-b430-3f5b2892e4a7)
+
+![image](https://github.com/user-attachments/assets/d71a5d78-00ef-43b2-8e4a-6b8bee6ba693)
+
+![image](https://github.com/user-attachments/assets/17d980d4-f1ac-4878-b32b-5b245bdebfc2)
+
+Q = count[2] .count[1] bar. Count[0] bar 
+![image](https://github.com/user-attachments/assets/ecf44955-8e55-4798-b06d-254c96031046)
+
+![image](https://github.com/user-attachments/assets/a6e86294-9d10-499e-9ede-2c81e8003c15)
+
+# Day 4 : GLS, blocking vs Non-blocking and synthesis simulation mismatch
+Introduction to Gate level simulation (GLS) and synthesis simulation mismatches
+What is GLS ?
+-	Running the testbench with netlist as Design Under Test
+-	Netlist is logically same as RTL code.same testbench will align with the design.
+Why GLS?
+-	Verify the logical correctness of design after synthesis.
+-	Ensuring the timing of the design is met.For this GLS needs to be run with delay annotation. 
+
+GLS using iverilog 
+![image](https://github.com/user-attachments/assets/6ceecf9b-ccc3-4b42-9677-c57a29dd9937)
+
+Here design is netlist.
+![image](https://github.com/user-attachments/assets/7b92e03c-5acd-4a8e-a277-e9fdf73ce99d)
+
+Synthesis Simulation Mismatch
+It can happen due following reasons :-
+-	Missing sensitivity list
+-	Blocking vs Non-Blocking assignments
+-	Non standard verilog coding
+
+![image](https://github.com/user-attachments/assets/158d15cf-fad6-40ca-b1fe-66f8be54a240)
+
+Simulator works in such a way that it checks for the change in signal activity. When input changes ,output changes. 
+Above screenshot shows the RTL code of 2:1 mux. In the left side RTL code, output y changes only when there is change in sel line.It will not check for change in i0 and i1.since sel line is given as sensitivity list in the always block. So this code ascts as a latch. In the right side RTL code, * is given as sensitivity list. Hence y changes when any of the input changes.
+
+Blocking and Non- blocking statements in verilog :-
+Inside always block :-
+Blocking statements are represented using “=” sign.
+-	It executes the statements in the order it is written.
+-	So the first statemnt is evaluated before the second statement.
+
+Non – Blocking statemnts are represented using “<=” sign.
+-	It executes all the RHS when always block is entered and assigns to LHS.
+-	It performs parallel evaluation.
+
+![image](https://github.com/user-attachments/assets/6cc0189d-4722-4997-965d-77b93bd7a932)
+
+![image](https://github.com/user-attachments/assets/027875a2-f8d8-4401-86e1-e59ae457e031)
+
+Lab on GLS synth simulation mismatch 
+Input of GLS : Design (netlist), gate level verilog model,testbench.
+Output : vcd file
+Simulation of ternary_operator_mux.v 
+RTL code :-
+
+![image](https://github.com/user-attachments/assets/5676e447-4bef-4be1-ba82-ef0a65c9692a)
 
 
