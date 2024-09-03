@@ -861,6 +861,90 @@ While loop to print 0 to 10
 ![image](https://github.com/user-attachments/assets/b3f8cd7f-1c56-4861-8a39-4ea668c2e4a4)
 
 Creating list and printing its contents 
+![image](https://github.com/user-attachments/assets/bc7fdae5-f8ab-4da0-a6f0-252371b7ad67)
+
+Accessing each element of list one by one using foreach
+
+![image](https://github.com/user-attachments/assets/9cb8ce4f-d78e-4bc2-9c26-7a6ff5b16b98)
+
+Tcl code to print all the and gates one by one from collection
+
+![image](https://github.com/user-attachments/assets/40fc0067-abfd-4f28-9962-00d49c05aa5b)
+
+Printing Multiplication Table
+![image](https://github.com/user-attachments/assets/ee8f1d75-1e30-4a04-b95a-6ec976a45439)
+
+# Day 6 : Basics of STA 
+Introduction to STA
+
+![image](https://github.com/user-attachments/assets/07a459cd-48f8-4024-9415-b7b584eb4840)
+
+Understanding how inflow of water is related to inflow of current.
+
+![image](https://github.com/user-attachments/assets/5c5f015b-725f-4ee2-9330-f42d297300f6)
+
+Here aim is to fill the water. Initially bucket 1 filling water in 1 gallon per minute and bucket 2 filling water in 5 gallons per minute. Lets say in case 1 ,water is filling into the bucket from 20% to 80% and the time taken to fill it is 3 min.In case 2,time to fill 1 gallon water is 0.2 min so time taken to fill water from 20% to 805 is 0.6min. By applying this concept in logic gate,we can see that time to change gate1 from 0 to 1 is 3min & for 2nd gate is 0.6 min.so gate 2 has less delay than gate 1 and the reason is gate 2 has more inflow. So we can conclude that delay is a function of inflow.
+Fast current sourcing = less delay
+
+![image](https://github.com/user-attachments/assets/4ed623b0-7d29-46a0-8318-5497df12beca)
+
+So from above example we can conclude that delay of a cell is function of input transition and output load.
+
+![image](https://github.com/user-attachments/assets/f8e376bf-24c7-471e-a5c2-8a605c7b0469)
+
+![image](https://github.com/user-attachments/assets/7f6b55eb-6d8a-4871-bf3b-ebfd51909b6d)
+
+![image](https://github.com/user-attachments/assets/9f42c4df-dcbe-4432-abf2-24d581814252)
+
+![image](https://github.com/user-attachments/assets/37ce6500-b61a-4d3e-aaa2-9a725ce914c7)
+
+Constraints
+
+![image](https://github.com/user-attachments/assets/261090b7-14fd-4a92-ad47-f01d45d8a830)
+
+In the above exmaple Critical path delay is 2.2 ns. Crital path is the path which has maximum delay and that will decide the clock frequency. So FCLK = 454.5 ns. Lets say we want to operate design at 500MHZ . so how can we make it to operate at 500MHZ? - By reducing the delay of AND gate. Consider delay of AND gate as 0.5ns so TCLK>= 2ns ,FCLK<= 500MHZ. By this we can increase the frequency. But how tool automatically select the gate which has less delay and how much delay is acceptable so that frequency will get increase? -  By giving constraints. 
+
+![image](https://github.com/user-attachments/assets/7485b120-b341-4c5c-a845-e2072e2856b0)
+
+But practically if we want to decide what delay should we consider so that design works on desired frequency is decided by using TCLK. So clock period will limit the delays in all Reg2Reg paths.
+
+![image](https://github.com/user-attachments/assets/69e73ae2-ecaf-4080-bc51-a4131f95deb6)
+
+![image](https://github.com/user-attachments/assets/92868708-e643-4871-921b-809edfc20fd6)
+
+![image](https://github.com/user-attachments/assets/ea5f17aa-db10-4ce2-bd39-9a087845badc)
+
+![image](https://github.com/user-attachments/assets/07526a01-f04b-46e9-a7b7-ee2a57ad64f5)
+
+![image](https://github.com/user-attachments/assets/435b2c07-aa58-4992-a65d-9c20a54fbca6)
+
+So Input and output logic is constrain by specifying input external delay and output external delay and associated with clock TCLK.
+Specifying Input external delay modelling and output delay modelling is called as IO modelling.
+
+![image](https://github.com/user-attachments/assets/aa95a4b7-bce8-4620-93fa-46e341cadda1)
+
+IO Constraints 
+Input logic and output logic is optimize in such a way that it should meet reg2reg timing requirement and Input and output logic is modelled using input external delay and output external delay.so we should tell the tool that how much is the external delay budget so that the tool calculate the Internal delay (dealy of Input logic and setup time) based on the clock period(external delay + Input logic time + setup time).
+
+![image](https://github.com/user-attachments/assets/922a4af6-6880-4aeb-a2c6-39612ecd47bd)
+
+But Practically, input transition is not sharp so we have to tell the tool that to perform extra optmization in the input logic so that will add extra delay.
+
+What happen if we don’t consider input transition?  Input logic delay will increase because of that flipflop setup requirement will not meet.
+
+![image](https://github.com/user-attachments/assets/488b41a1-878f-4994-a07b-62248e4a82cf)
+
+And also we have to tell the tool that there is a output load at the output side so accordingly perform optimization of output logic.
+
+What happent if we don’t consider output load?  output logic delay will increase because of that external delay and setup time requirement will not meet.
+
+Generally,out of clock period 70 % is set for external delay and 30 % set for Internal delay. 
+
+
+
+
+
+
 
 
 
