@@ -940,6 +940,12 @@ What happent if we don’t consider output load?  output logic delay will inc
 
 Generally,out of clock period 70 % is set for external delay and 30 % set for Internal delay. 
 
+![image](https://github.com/user-attachments/assets/93cb511b-fdf4-43df-95d1-65a0c02d52d7)
+
+Lab on Timing dot Libs
+
+![image](https://github.com/user-attachments/assets/a3ae7a69-df92-4fc1-b94c-d59193831b66)
+
 
 
 
