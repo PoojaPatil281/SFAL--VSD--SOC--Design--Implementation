@@ -947,6 +947,38 @@ Lab on Timing dot Libs
 ![image](https://github.com/user-attachments/assets/a3ae7a69-df92-4fc1-b94c-d59193831b66)
 
 
+If the maximum capacitance limit is violated then the net is buffered
+
+![image](https://github.com/user-attachments/assets/fa8eca50-a2a1-4033-aeb6-383b8cdde8c1)
+
+![image](https://github.com/user-attachments/assets/d5006514-63e4-463e-80b3-e107c2132442)
+
+.lib contains different flavors of same standard cell.heigher driving strength cell will have less delay,more area.
+
+![image](https://github.com/user-attachments/assets/d050f28f-c466-496f-855e-f8423903bccb)
+
+.lib contains information of pin and the pin capaciatnce and max transition associated with that pin, whether pin is input pin,output pin or clock pin. 
+
+![image](https://github.com/user-attachments/assets/57ec1a90-1116-48f0-a1eb-94c6d584e9d1)
+
+![image](https://github.com/user-attachments/assets/5e381a5b-ff2c-47fe-875f-849d1e5d8b21)
+
+Delay lookup table :-
+
+![image](https://github.com/user-attachments/assets/0b588cab-999c-482a-980f-de43e3e24355)
+
+Here Index 1 is output load, Index2 is input transition. From index 1 and index 2 you can see that as ouput load increases input transition also increases.
+
+![image](https://github.com/user-attachments/assets/105f17c7-1aae-4241-884e-931ff5c654f7)
+
+Tool use unateness information to propagate transition.
+It is observed that AND and OR gate have possitive unateness, NOT and NAND have negative unateness and EX-OR gate exhibits both possitive and negative unateness hance called Non- Unate.
+Complex gate can have both possitive and negative unate.
+
+![image](https://github.com/user-attachments/assets/bb310ec8-d231-42e7-9cf0-a4f09865a5c2)
+
+Sequential timing arcs
+
 
 
 
