@@ -740,6 +740,61 @@ Introduction  to Design Compiler (DC)
 
 ![image](https://github.com/user-attachments/assets/698fa383-b3fd-4d45-a01a-411cb2d63f80)
 
+![image](https://github.com/user-attachments/assets/ff378a4a-b427-4634-ad9e-12ad7a8d5953)
+Why called logical synthesis? : since the connection is still logically connected as there is no routing information like to which metal it is connected,how it is connected,where the cell is place that kind of information is not present. Hence it is called as logical synthesis.
+
+![image](https://github.com/user-attachments/assets/78a253a8-12ac-452c-a574-34524ca65ca6)
+Invoking DC basic setup
+on DC terminal :- git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+Contents of .lib :-
+-	It contains information about Process,Volatge,Temperature(PVT) and Electronic circuit is function of Process,Voltage,Temperature. 
+-	Operating conditions
+-	Different flavours of same standard cell and its timing,power related information.
+-	
+![image](https://github.com/user-attachments/assets/0479a967-1f9b-4a7d-86e6-e9e08dcbd7a4)
+
+Invoking Dc_shell
+![image](https://github.com/user-attachments/assets/5453a0d7-a689-41ea-be81-204b80f985af)
+
+![image](https://github.com/user-attachments/assets/732b2c60-fc72-4642-a5cb-273c3926dbe2)
+
+Here your_library.db is a imaginary non existent library
+Verilog code of flipflop with enable and asynchronous RST
+
+![image](https://github.com/user-attachments/assets/1041f41a-40ba-4801-bb02-6695872326e2)
+
+![image](https://github.com/user-attachments/assets/721200b5-7cd5-4825-b477-d549dd962698)
+
+![image](https://github.com/user-attachments/assets/d31dfafd-6cd0-416e-984b-1d0c17d0381a)
+
+![image](https://github.com/user-attachments/assets/a4e84dd7-3b8d-445d-890d-13d3595a453b)
+
+In the above screenshot you can see,since we have not provided library so to understand the design tool uses internal virtual library(db) and that virtual library is called as GTECH.
+
+![image](https://github.com/user-attachments/assets/90481bb1-57bf-46cc-91de-1c3cbf46c437)
+
+![image](https://github.com/user-attachments/assets/02325b16-12a0-40d0-9966-7add2bfa003b)
+
+Since we have not provided library hence tool written out the netlist in the form of GTECH cells.
+
+![image](https://github.com/user-attachments/assets/0e0dd1bc-2b25-4209-aad8-1d9f4c0624e9)
+
+![image](https://github.com/user-attachments/assets/1542ec06-2142-4489-9ddc-b03e4e0b8d4f)
+
+![image](https://github.com/user-attachments/assets/35e5b6c9-0125-4a4b-9d04-58239439db7f)
+
+
+Again you can see that still tool has not mapped the cells with library that we have provided because we have set the two variables : target_library and link_library.
+
+![image](https://github.com/user-attachments/assets/1a50e275-e83d-40aa-8111-0ead3374856a)
+
+![image](https://github.com/user-attachments/assets/e1e3377a-850d-4751-8ff1-32f808edbd2b)
+
+![image](https://github.com/user-attachments/assets/4c7387cb-8545-4133-960c-fbb32e4a1232)
+
+
+
+
 
 
 
