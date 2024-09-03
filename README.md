@@ -792,6 +792,76 @@ Again you can see that still tool has not mapped the cells with library that we 
 
 ![image](https://github.com/user-attachments/assets/4c7387cb-8545-4133-960c-fbb32e4a1232)
 
+Here * represents we don’t want to overwrite the existing lib files present in DC memory ,only appending link libarary.
+![image](https://github.com/user-attachments/assets/9547e414-bfb7-4ec9-905b-6c34159dfe9f)
+Link command will link the design with library.
+
+![image](https://github.com/user-attachments/assets/140c18ca-d898-43ff-990c-e215068ca5e8)
+
+![image](https://github.com/user-attachments/assets/a9b73349-d05c-4ec4-afd6-23bd79bc4523)
+
+![image](https://github.com/user-attachments/assets/725679c2-01e8-419c-ba59-bb0da69fb471)
+
+![image](https://github.com/user-attachments/assets/9282d14e-e234-4ac0-9e60-8d905de4b2be)
+
+![image](https://github.com/user-attachments/assets/36410463-b9a1-49e4-bfdf-e56449714ba8)
+
+Now you can see the netlist which is properly mapped with the libarary.
+
+Lab Introduction to ddc gui with design_vision
+Design_vision is a gui format of DC
+Invoking design vision tool
+
+![image](https://github.com/user-attachments/assets/b9259651-b43f-4c85-891d-3b2d318379dd)
+
+![image](https://github.com/user-attachments/assets/fc31b79c-0e84-47af-94b5-4b9604d2995e)
+
+read_ddc will save all the information in the tool memory in that particulat session.so it will inferred libarary,design but the only disadvantage is ddc is synpsys proprietary format means it will only be understood by synopsys tool. For example : you have performed synthesis in DC and want to perform physical design in ICC2 then in ICC2 you don’t again need to specify library,design.That information can be read into another synopsys tool using single ddc command.
+
+![image](https://github.com/user-attachments/assets/edfb6944-3efd-447f-a293-6f66e22bbc3f)
+
+![image](https://github.com/user-attachments/assets/c77f3a62-4269-43d3-936b-7689d68a0070)
+
+Lab on dc synopsys dc setup
+
+![image](https://github.com/user-attachments/assets/fbeaca07-4dc1-4fdb-932e-85cfbc878be2)
+
+![image](https://github.com/user-attachments/assets/dca07985-496b-4180-a7d9-962b0799307a)
+
+
+It is observed that everytime we can’t manually set link_libarary and target_library hence .synopsys_dc.setup file is created that will automatically set link and target library. This file either present either in user home direcytoy or where dc setup is present(deafult).
+
+![image](https://github.com/user-attachments/assets/d8f66038-4805-4625-a87c-7868b6132bef)
+
+![image](https://github.com/user-attachments/assets/49b5f504-bb67-4020-aa63-511c432f2439)
+
+
+TCL quick Refresher
+
+![image](https://github.com/user-attachments/assets/39107ec2-eda9-4aac-942c-326b3bc23dfe)
+
+![image](https://github.com/user-attachments/assets/ad68aab7-8f04-4afe-9082-b9f8f380a3da)
+
+![image](https://github.com/user-attachments/assets/bec88339-7a87-414c-86ce-27f303bd897b)
+
+![image](https://github.com/user-attachments/assets/976e8977-dbc3-416e-8457-ec050b454d33)
+
+![image](https://github.com/user-attachments/assets/93e0a7d0-4f04-4ac2-9755-f1edacb9cbdf)
+
+![image](https://github.com/user-attachments/assets/e2683818-5902-4ce2-a7ca-e9933b4f0e98)
+
+Lab on TCL scripting
+
+For loop to print 0 to 11
+
+![image](https://github.com/user-attachments/assets/b0425431-ea16-49dc-8b04-11ccb28b4a93)
+
+While loop to print 0 to 10
+
+![image](https://github.com/user-attachments/assets/b3f8cd7f-1c56-4861-8a39-4ea668c2e4a4)
+
+Creating list and printing its contents 
+
 
 
 
