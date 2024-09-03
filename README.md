@@ -719,5 +719,29 @@ Thus,we have to supply the inputs(constraints) such that it will select the corr
 
 ![image](https://github.com/user-attachments/assets/8cfa6e4d-58c4-4423-b9ba-a3c1b56009ee)
 
+![image](https://github.com/user-attachments/assets/0ac00b51-ae4e-4112-93f8-84ef2681be9b)
+
+![image](https://github.com/user-attachments/assets/a2c08410-4553-4f12-90b6-42c4c765e978)
+
+From above three implementation ,Implementation 3 is best in terms of both area and delay.
+![image](https://github.com/user-attachments/assets/538cc918-d81d-4c71-94d0-1c34c6c84205)
+
+But if implementation 3 is present in hold sensitive path and lets say the hold requirement in the capturing clock is 3 or 2.6ns then hold reqirement will not meet.so in that case implementation 3 will not be a good choice since we have to add buffer to increase delay.so how do we meet hold ? so to avoid this we can add increase or add buffer in the combinational path but this will again add area of buffer. 
+
+![image](https://github.com/user-attachments/assets/f8285dc0-8adc-4d9a-b2f3-609718261c70)
+
+### Advanced Synthesis and STA using Design Compiler.
+Introduction  to Design Compiler (DC)
+![image](https://github.com/user-attachments/assets/77b027e5-e10a-4a06-88ec-8d51347d5602)
+
+![image](https://github.com/user-attachments/assets/3b2ed388-faf1-4e48-bda2-5454ef77bca3)
+
+![image](https://github.com/user-attachments/assets/18c21661-ae93-4129-bf9b-fc3d11b22578)
+
+![image](https://github.com/user-attachments/assets/698fa383-b3fd-4d45-a01a-411cb2d63f80)
+
+
+
+
 
 
