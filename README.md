@@ -664,3 +664,60 @@ GLS output :-
 
 In the above screenshot also you can see that there is a synthesis simulation mismatch caused due to blocking statements.so use blocking statements in verilog only when it is needed otherwise can get unpredictable results. 
 
+# Day 5  : Advanced Synthesis and STA with DesignCompiler
+
+Agenda of the course :-
+-	Basics of Digital Logic Design and Synthesis
+-	Introduction to DC
+-	TCL (Tool Command Language)
+-	Constraining the Design, Synopsys Design Constraints (SDC)
+-	STA
+-	Logic Optimizations
+-	Adavanced Synthesis options
+-	Generating Timing Reports
+-	Analyzing Synthesis QoR
+
+Tools Used :-
+-	Iverilog – For Verilog Compilation, Simulation
+-	Gtkwave – for viewing the simulation output
+-	Synopsys Design compiler – For Logic Synthesis
+-	Skywater 130nm Library
+
+Logic Synthesis 
+What is Synthesis?
+-	Synthesis is a process of converting RTL to Gate Level Transition.
+-	The Design is Converted into gates and the connections are made between the gates.
+-	This is given out as a file called netlist.
+-	Synthesis Inputs :- RTL,.lib
+-	Synthesis output : Netlist
+
+![image](https://github.com/user-attachments/assets/346ac463-3ec3-4912-b5db-740aae7719c6)
+
+What is .lib ?
+
+![image](https://github.com/user-attachments/assets/0686eafa-5451-4634-8aca-03decc5ad68f)
+
+It contains informtaion about standard cell and different flavors of same gates such as slow,fast,medium. Thecollection of logical gates is called as .lib
+
+![image](https://github.com/user-attachments/assets/0433944c-8067-4975-b4ec-47ac086c8720)
+
+![image](https://github.com/user-attachments/assets/3a1d533f-68ab-4742-bd4e-5bb7b88db045)
+
+We need faster cells to meet setup reuirement i.e to reduce combinational delay or to maximize required frequency of operation.
+We need slower cells to meet the hold requirement.
+
+![image](https://github.com/user-attachments/assets/ab7abe9b-69a4-4f04-ba51-b9b87b58baff)
+
+Faster cells use wide transistor hence occupy more area,power but with less delay and capable of sourcing more current.
+Since MOSFET drain current (Id) is directly proportional to W/L.
+Slower cells use narrow transistor which have less area and required less power but delay will be higher.
+![image](https://github.com/user-attachments/assets/58553f64-b43e-4b05-8157-1a9ee94d3358)
+
+Thus,we have to supply the inputs(constraints) such that it will select the correct mix of cells.i.e we r guiding the synthesis tool in terms of constraints.
+
+![image](https://github.com/user-attachments/assets/b47685b8-5568-4f63-b461-b4f553814c61)
+
+![image](https://github.com/user-attachments/assets/8cfa6e4d-58c4-4423-b9ba-a3c1b56009ee)
+
+
+
