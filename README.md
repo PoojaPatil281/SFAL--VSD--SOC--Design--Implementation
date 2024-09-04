@@ -1013,6 +1013,46 @@ In negative latch :- setup time is with respect to possitive edge.
 
 ![image](https://github.com/user-attachments/assets/b93fdbd4-0a01-4e11-a858-292e3a673117)
 
+List_lib :- It tells what is the library loaded in the dc_shell
+![image](https://github.com/user-attachments/assets/30d579b8-d09a-4333-940d-ff97e2929469)
+
+To get all and gates :-
+![image](https://github.com/user-attachments/assets/4a2360d8-cfdf-4e62-b98b-37ca3eccb3f3)
+
+![image](https://github.com/user-attachments/assets/91754383-8f0d-4b06-8321-48243b2af917)
+
+![image](https://github.com/user-attachments/assets/97f0d412-af92-4f39-8204-7d83c1b750a3)
+
+
+To get pin :-
+![image](https://github.com/user-attachments/assets/3181a3ce-ebea-4215-b23e-d7eced835f48)
+
+TCL script to display direction of each pin :-
+![image](https://github.com/user-attachments/assets/3d87c782-4550-42f4-b3a2-62252a51b7ce)
+
+To get functionality of output pin :-
+![image](https://github.com/user-attachments/assets/db998677-bddb-4ac7-beeb-05071b7f30e9)
+
+TCL script to get output pin and  function of list of gates :-
+![image](https://github.com/user-attachments/assets/d98a4b10-906b-4300-9eb2-f451f04aae9a)
+
+![image](https://github.com/user-attachments/assets/2f8537bf-68cb-4b00-85d4-65ab448fad72)
+
+To get area of cell :-
+![image](https://github.com/user-attachments/assets/e3f23718-07de-489f-97af-46742fc0f633)
+
+To get capacitance of pin :-
+![image](https://github.com/user-attachments/assets/5afcb74e-738f-4b58-beab-41cc9f219931)
+
+To check whether pin is clock pin or not :-
+![image](https://github.com/user-attachments/assets/298f4182-ddd7-4801-a4ca-9e8570f897de)
+
+To get all sequential cells :-
+![image](https://github.com/user-attachments/assets/98186ab2-ba1a-4b08-8965-10fd0597ec32)
+
+To list all attributes :-
+Cmd :- list_attribute -app
+
 
 
 
