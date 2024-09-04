@@ -979,6 +979,46 @@ Complex gate can have both possitive and negative unate.
 
 Sequential timing arcs
 
+![image](https://github.com/user-attachments/assets/c5fc25ad-5fce-47be-808c-a0e9ea665a0e)
+
+For possitive edge DFF ,TCQ measured after the clock edge and before the posedge setup time is measured.
+
+![image](https://github.com/user-attachments/assets/aa341785-eee7-4032-9f63-24a8666d2590)
+
+![image](https://github.com/user-attachments/assets/bff3f97c-b14d-42ac-87ba-ff424a331e35)
+
+In the above screnshot you can see that TCQ dealy is with respect to rising edge and setup time measured with respect to rising edge.
+
+
+For negative edge DFF,TCQ measured after negedge and setup time is measured before the negedge.
+
+![image](https://github.com/user-attachments/assets/ad8db510-0fbe-4c16-b23a-5e2d57722e03)
+
+![image](https://github.com/user-attachments/assets/745700ee-fce0-4d9e-935e-7c5c2650d5c7)
+
+In the above screenshot you can see that for neg edge flipflop,TCQ delay is with respect to falling edge and setup time measured with respect to falling edge.
+
+Command to get all the sequential cells:-
+
+![image](https://github.com/user-attachments/assets/e339691c-9994-41db-b020-8ad9397211ea)
+
+For a latch :-
+Setup is always check before the sampling point.
+In possitive latch  :-  setup time for possitive edge latch  is measured with respect to negedge.
+
+![image](https://github.com/user-attachments/assets/fb55e670-16ee-4d1f-9d9b-d5166debd671)
+In negative latch :- setup time is with respect to possitive edge.
+
+![image](https://github.com/user-attachments/assets/83c81dac-7bd7-44af-9d17-db1dd5f3ca01)
+
+![image](https://github.com/user-attachments/assets/b93fdbd4-0a01-4e11-a858-292e3a673117)
+
+
+
+
+
+
+
 
 
 
