@@ -1,4 +1,4 @@
-# SFAL-VSD-SOC-Design-and-Implementation
+# SFAL-VSD-SOC-Design-&-Implementation
 ### Day 0 : Tool Installation
 1. Install Yosys
 - $ sudo apt-get update
