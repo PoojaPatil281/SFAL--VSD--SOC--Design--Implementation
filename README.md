@@ -1225,16 +1225,18 @@ Modelling of VSDBabySoC
 Here we will increase/decrease the digital output value and feed it to DAC model so we can see the changes on the SoC output.
 Commands to perform modelling of VSDBabySoC
 1.	First we need to install some important packages:
-$ sudo apt install make python python3 python3-pip git iverilog gtkwave docker.io
-$cd ~
-  $pip3 install pyyaml click sandpiper-saas
+- $ sudo apt install make python python3 python3-pip git iverilog gtkwave docker.io
+- $cd ~
+- $pip3 install pyyaml click sandpiper-saas
 2.	Now we can clone this repository in an arbitrary directory (we will choose home directory here)
-$cd ~
-$git clone https://github.com/manili/VSDBabySoC.git
+- $cd ~
+- $git clone https://github.com/manili/VSDBabySoC.git
 3.	Change the directory to VSDBabySoc
-$cd VSDBabySoC
+- $cd VSDBabySoC
 4.	Generate .v file from .tlv file using sandpiper-saas that will generate .v files rvmyth.v and rvmyth_gen.v
-$sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+- $sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+5.Compile and Simulate the design
+- iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module
 
 
 
