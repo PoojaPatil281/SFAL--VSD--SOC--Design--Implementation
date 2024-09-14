@@ -1053,6 +1053,188 @@ To get all sequential cells :-
 To list all attributes :-
 Cmd :- list_attribute -app
 
+# Day 7 : Introduction to BabySOC
+What is SOC and Why SOC?
+SOC is a Intergrated circuit that integrates almost all the electronic components of computer or any other elctronic system.This components can be central processing unit (CPU),memory interfaces,input & output devices,secondary storage devices,peripheral interfaces such as timers,etc.
+These higher performance SOC’s are paired with physically separate memory or secondary storage chip that may be layered on top of SOC.This is known as package on packaging (POP) and this is placed close to the soc.
+SOC is a single-die chip that has some different IP cores on it. These Ips could vary from microprocessors (completely digital) to 5G broadband modems (completely analog).
+SOC with equivalent functionality will have increased performance and reduced power consumption as well as a smaller semoconductor die area.
+My mobile processor name is Samsung Exynos 1280.
+Typical Structure of a snapdragon SOC
+
+![image](https://github.com/user-attachments/assets/76f911da-2e2d-416b-98d3-12f05ec98603)
+
+![image](https://github.com/user-attachments/assets/139d1510-f5ac-4f36-bf43-30dfa4cb6f64)
+
+![image](https://github.com/user-attachments/assets/aa9d9870-1730-479b-baa7-400a001e22d1)
+
+![image](https://github.com/user-attachments/assets/2f5034ed-3ea9-4b2f-84fb-46e18869f242)
+
+Introduction to RISC-V based BabySOC 
+![image](https://github.com/user-attachments/assets/f3c62711-c2ad-4188-8677-26eaa69b40fa)
+
+This BabySOC is a RISC-V based BabySOC.here the main purpose to design small SOC is to test the IP cores and the IP core used here is PLL,rvmyth and DAC. Here rvmyth is a simple RISC-V based CPU.Phase locked Loop (PLL) is a control system that generates an output signal whose phase is related to the phase of input signal.PLL is widely used for synchronization purposes including clock generating and clock distribution.DAC stands for digital to analog converter.It is used in modern communication systems which enables the generation of digitally defined transmission signals which results in high speed DAC which is used in mobile communication.
+
+Introduction to modelling
+Here initial input signals are fed into babySOC that enables a PLL to start generating  clock for the circuit.This enables rvmyth core to perform certain instruction. Stored in its memory (imem).As a result r17 register filled with values cycle by cycle.These values are utilized by DAC core to produce the final output signal,named OUT. And then testbench are used to test the IP cores.
+
+Introduction to Modelling and Simulation
+Modelling and Simulation is the use of a physical and logical representation  of a given system  to generate data and help to determine decisions or make predictions about the system.Models are represenatations that can aid in defining,analyzing and communicating set of concepts.In Industry there will not be a pure digital or analog signals but can be mixed signals and we can design this mixed signal circuite using modelling and simulation methods.Hence it is widely used in the VLSI domain.
+
+Purpose of modelling
+Systrem models are specifically developed to : a. support analysis,specification b. design c. verification d. and validation of a system e. as well as to communicate certain information.
+
+VSDBabySOC modelling 
+initial input signals are fed into babySOC that enables a PLL to start generating  clock for the circuit.This enables rvmyth core to perform certain instruction. Stored in its memory (imem).As a result r17 register filled with values cycle by cycle.These values are utilized by DAC core to produce the final output signal,named OUT. And then testbench are used to test the IP cores.
+
+Modelling tasks involves modelling of :
+1.	rvmyth modelling
+2.	PLL modelling
+3.	DAC modelling
+
+1.	RISC – V Rvmyth modelling :-
+![image](https://github.com/user-attachments/assets/9d2a81ef-bcfd-4d69-8290-f1e45c908ceb)
+
+![image](https://github.com/user-attachments/assets/ae7f9454-828b-46a7-ab84-57765251a197)
+
+Different stages of RISC-V are :
+1.	Fetch
+2.	Decode
+3.	Read
+4.	Execute
+5.	Write back
+Here we are using Harvard architecture which has different code memory and data memory whereas Von Neuman Architecture uses same memory.
+1.	Program counter(PC) keeps count of program code.Lets say PC points towards a Instruction such as ADD x1, x2. At fetch stage Instruction are fetch from Instruction memory
+2.	Decode :Hardware doesn’t understand Assembly language Instruction such ADD,MOVE.. so to make the hardware to understand decoder is used to decode the Instructions into 0’s or 1’s and send to the next stage which read memory stage.
+3.	Read :output of decoder is given to data memory. Lets say x1 and x2 are the two registers in the data memory.
+4.	Execute : x1 and x2 value given to ALU and performs addition.
+5.	Write back : output of ALU are stored in the data memory using write back opertaion.
+This is called as 1 cycle of CPU RISC-V processor.consider to execute single instruction 5 clock cycles are needed and Lets say we have a thousands of instructions so to execute these instructions we need 1000*5= 5000 clock cycles so pipeling is employed to perform multiple functions simultaneously,although it is essential to amnage pipelining hazards.
+
+![image](https://github.com/user-attachments/assets/14afaff3-d059-4e4f-a846-54a420c82730)
+
+Phase Locked Loop (PLL)
+It is an electronic circuit with a voltage or voltage-driven oscillator that constantly adjust to match the frequency of an input signal.PLL will generate a output signal whose frequency is matched with a input signal.
+PLL are used to generate,stabilize,modulate,demodulate frequencies.
+How is clock generated? : using oscillator such as Quartz crystal oscillator.
+For 100MHZ and below off chip oscillator will do,but for 100MHZ  and above it wont be good enough.so for higher frequencies require on-chip PLLs. 
+
+![image](https://github.com/user-attachments/assets/d34c77de-a895-4d2f-af9f-6a0a38afee98)
+
+![image](https://github.com/user-attachments/assets/385c4f13-25dd-4cd1-94cf-2274c2ee776b)
+
+Main components of PLL:-
+1.	Phase detector
+2.	Loop filter
+3.	Voltage controlled oscillator
+4.	Frequency divider
+
+![image](https://github.com/user-attachments/assets/95fee3ce-8133-4155-84fb-2c39bd5cd27f)
+
+clock pulse coming from oscillator that have a matched phase is given to multiplier and also initially there will be some phase change that phase will be detected in phase detector. Since previously reference frequency and PLL frequency don’t match hence there will be some phase difference that will be pass to a loop filter and it will generate voltage and that will be given to voltage controlled oscillator (VCO). VCO is basically a inverter connected contineously. VCO output will be a required frequency to match the PLL.Control loop will locks phase of F(PLL) to F(REF).
+
+![image](https://github.com/user-attachments/assets/3edf976b-d0ec-4bb2-9101-a34298194bc4)
+
+
+Digital to Analog  Converter (DAC)
+A DAC converts a digital input signal into an analog output signal.
+The digital signal is represented with a binary code,which is combination of 0 and 1. A DAC consists of a number of binary inputs and a single output.
+In general, the number of binary inputs of a DAC will be a power of two.
+There are two types of DACs :-
+•	Weighted Resistor DAC
+•	R-2R Ladder DAC
+Weighted Resistor DAC :- A weighted resistor DAC produces an analog output, which is almost equal to digital input y using binary weighted resistors in the inverting adder circuit. In short, a binary weighted resistor DAC is called as weighted resistor DAC.
+
+![image](https://github.com/user-attachments/assets/7895002d-f3f1-402d-aefb-9be8d5e7e2cf)
+
+Switches are controlled by a microcontroller or processor outputs.depending upon which switch is on ,potential  division will happen and that will get added by the summing amplifier and it will give analog value. 
+The disadvantage of weighted resistors DAC is it is difficult to design more accurate resistors as the number of bits present in the digital input increases.To overcome this problem R-2R ladder is used.
+
+R-2R Ladder
+The R-2R ladder DAC overcomes the disadvantages of a binary weighted resistor DAC. As the name suggests, R-2R ladder DAC produces an analog output, which is almost equal to the digital input by using a R-2R ladder network in the inverting adder circuit.
+
+![image](https://github.com/user-attachments/assets/6e02dcdb-d0d9-4694-9869-65be91032679)
+
+![image](https://github.com/user-attachments/assets/38648ff7-0e2e-488b-8809-e908cfed9d55)
+
+Modelling of BabySOC 
+RVMYTH is a digital block so we can use HDL for designing and check functionality using a testbench.
+But DAC and PLL are analog and also verilog can’t synthesis analog design. So to we will simulate it using verilog and for we will use non synthesizable data types such as real.Here our aim is to be able to simulate functionality and also to verify its logical correctness.In logical correctness we will check whether RVMYTH is compatible with DAC and PLL.
+So iverilog will be use for modelling. Iverilog will compile and simulate the design. And GTKWave will be use to see the waveforms and debug.
+
+Modelling and simulating the design on iverilog involves 2 manin steps namely:
+1.	Compilation – iverilog builds the instances hierarchy and generates a binary executable a.out. This binary executable is later used for simulation.
+2.	Simulation – Dduring compilation,iverilog generates a binary executable.
+
+Tips on modelling your design
+1.	Avoid race conditions
+2.	Use a optimized Testbench for debugging your design.
+3.	Creating models that simulate faster.
+4.	Try to use case statements instead of if -else statements.
+Since If-else statements results in cascaded mux as shown below.
+
+![image](https://github.com/user-attachments/assets/7b42dc40-1c25-43ca-afc6-7183ec92378f)
+
+Basic commands to compile ,simulate and to see the waveforms on GTKWave
+•	Iverilog design_file.v design_testbench.v
+•	./a.out 
+This should run without any errors and also without warnings.durring this process .vcd file is generated.. vcd will dump all the values given by design in the testbench. Ensure that run these commands in your project directory / design folder.
+
+Modelling each core seperately :- 
+1.	RVMYTH modelling
+2.	PLL modelling
+3.	DAC modelling
+1.	Modelling of RVMYTH 
+RVMYTH core is digital block and the code for it is written in verilog with the corresponding testbench for the same.The entire C program(sum of numbers from 1 to n) will be converted into a hex format and will be loaded into memory. The CPU will then read the contents of the memory,process it and finally display the output result.
+Commands to perform RVMYTH modelling
+1.git clone https://github.com/kunalg123/rvmyth/ 
+2. cd rvmyth 
+3. csh
+4. iverilog mythcore_test.v tb_mythcore_test.v 
+5. ./a.out
+6. gtkwave <file_name>.vcd &
+7. Add the required waveforms.
+
+![image](https://github.com/user-attachments/assets/4b390c5e-de16-4d53-ae9f-8676c3b434bb)
+
+Modelling of DAC
+Commands to perform modelling of DAC
+1. git clone https://github.com/vsdip/rvmyth_avsddac_interface.git
+2. cd SDBabySoC/src/module/DAC/rvmyth_avsdpll_interface/iverilog/presynthesis
+3. csh
+4. iverilog avsddac.v avsddac_tb_test.v
+5. ./a.out
+6. gtkwave <file_name>.vcd &
+7. Add the required waveforms.  
+
+![image](https://github.com/user-attachments/assets/ea028c09-5a45-4dd0-917e-3e179a839e9f)
+
+Modelling of PLL 
+Commands to perform modelling of PLL
+1. git clone https://github.com/vsdip/rvmyth_avsdpll_interface.git
+2. cd VSDBabySoC/src/module/PLL/rvmyth_avsdpll_interface/verilog
+3. csh
+4. iverilog avsd_pll_1v8.v pll_tb.v
+5. ./a.out
+6. gtkwave <file_name>.vcd &
+7. Add the required waveforms.
+
+![image](https://github.com/user-attachments/assets/c37e923d-30e1-465d-bd6a-9098c7aeeafd)
+
+Modelling of VSDBabySoC
+Here we will increase/decrease the digital output value and feed it to DAC model so we can see the changes on the SoC output.
+Commands to perform modelling of VSDBabySoC
+1.	First we need to install some important packages:
+$ sudo apt install make python python3 python3-pip git iverilog gtkwave docker.io
+$cd ~
+  $pip3 install pyyaml click sandpiper-saas
+2.	Now we can clone this repository in an arbitrary directory (we will choose home directory here)
+$cd ~
+$git clone https://github.com/manili/VSDBabySoC.git
+3.	Change the directory to VSDBabySoc
+$cd VSDBabySoC
+4.	Generate .v file from .tlv file using sandpiper-saas that will generate .v files rvmyth.v and rvmyth_gen.v
+$sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
 
 
 
