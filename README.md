@@ -1238,6 +1238,9 @@ Commands to perform modelling of VSDBabySoC
 5.Compile and Simulate the design
 - iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module
 
+![image](https://github.com/user-attachments/assets/e66dcaeb-8e58-4543-bc41-48acda64caa9)
+
+![image](https://github.com/user-attachments/assets/de5bdf17-ae30-4f64-ab01-f09891d5d7bd)
 
 
 
