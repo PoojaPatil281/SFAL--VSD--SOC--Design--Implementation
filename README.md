@@ -1239,7 +1239,7 @@ Commands to perform modelling of VSDBabySoC
 4.	Generate .v file from .tlv file using sandpiper-saas that will generate .v files rvmyth.v and rvmyth_gen.v
 - $sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
 
-5.Compile the design using icarus iverilog
+5.  Compile the design using icarus iverilog
 - $iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module
 
 ![image](https://github.com/user-attachments/assets/e66dcaeb-8e58-4543-bc41-48acda64caa9)
