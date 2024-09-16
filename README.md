@@ -1228,19 +1228,24 @@ Commands to perform modelling of VSDBabySoC
 - $ sudo apt install make python python3 python3-pip git iverilog gtkwave docker.io
 - $cd ~
 - $pip3 install pyyaml click sandpiper-saas
+  
 2.	Now we can clone this repository in an arbitrary directory (we will choose home directory here)
 - $cd ~
 - $git clone https://github.com/manili/VSDBabySoC.git
+  
 3.	Change the directory to VSDBabySoc
 - $cd VSDBabySoC
+  
 4.	Generate .v file from .tlv file using sandpiper-saas that will generate .v files rvmyth.v and rvmyth_gen.v
 - $sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
-5.Compile and Simulate the design
-- iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module
+
+5.Compile the design using icarus iverilog
+- $iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module
 
 ![image](https://github.com/user-attachments/assets/e66dcaeb-8e58-4543-bc41-48acda64caa9)
 
 ![image](https://github.com/user-attachments/assets/de5bdf17-ae30-4f64-ab01-f09891d5d7bd)
+
 
 
 
