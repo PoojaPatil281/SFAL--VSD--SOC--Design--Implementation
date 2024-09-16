@@ -1243,7 +1243,8 @@ RVMYTH is developed using Transaction Level (TL)-verilog. To  integrate it into 
 
 ![image](https://github.com/user-attachments/assets/e66dcaeb-8e58-4543-bc41-48acda64caa9)
 
-![image](https://github.com/user-attachments/assets/de5bdf17-ae30-4f64-ab01-f09891d5d7bd)
+![image](https://github.com/user-attachments/assets/e9ce8c7f-b7e0-4d3b-a279-8f13d06e294f)
+
 
 
 
