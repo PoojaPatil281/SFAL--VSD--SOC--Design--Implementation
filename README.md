@@ -1222,9 +1222,8 @@ Commands to perform modelling of PLL
 ![image](https://github.com/user-attachments/assets/c37e923d-30e1-465d-bd6a-9098c7aeeafd)
 
 Modelling of VSDBabySoC
-Here we will increase/decrease the digital output value and feed it to DAC model so we can see the changes on the SoC output.
-Commands to perform modelling of VSDBabySoC
-1.	First we need to install some important packages:
+RVMYTH is developed using Transaction Level (TL)-verilog. To  integrate it into our SOC model, we use tools like SandPiper Saas to compile and transform TL-Verilog code into standard verilog.
+1. install some Required packages:
 - $ sudo apt install make python python3 python3-pip git iverilog gtkwave docker.io
 - $cd ~
 - $pip3 install pyyaml click sandpiper-saas
