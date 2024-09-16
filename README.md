@@ -1243,6 +1243,8 @@ RVMYTH is developed using Transaction Level (TL)-verilog. To  integrate it into 
 
 ![image](https://github.com/user-attachments/assets/e66dcaeb-8e58-4543-bc41-48acda64caa9)
 
+Waveform :- DAC output is verified with OUT.
+
 ![image](https://github.com/user-attachments/assets/e9ce8c7f-b7e0-4d3b-a279-8f13d06e294f)
 
 
