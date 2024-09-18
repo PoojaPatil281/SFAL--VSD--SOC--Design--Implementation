@@ -1282,6 +1282,12 @@ Download latest sky130_fd_sc_hd_tt_025C_1v80.lib file using below command
 
 $wget https://raw.githubusercontent.com/efabless/skywater-pdk-libs-sky130_fd_sc_hd/master/timing/sky130_fd_sc_hd__tt_025C_1v80.lib
 
+Convert sky130_fd_sc_hd_tt_025C_1v80.lib to sky130_fd_sc_hd_tt_025C_1v80.db
+
+$lc_shell
+$read_lib sky130_fd_sc_hd_tt_025C_1v80.lib.1
+
+![image](https://github.com/user-attachments/assets/07139255-c80a-44e3-8034-500efec46dd3)
 
 
 
