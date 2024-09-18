@@ -1393,7 +1393,8 @@ $set_input_transition -max 0.4 [get_ports ENb_CP]
 
 $set_input_transition -min 0.1 [get_ports ENb_CP]
 
-Commands to perform synthesis with SDC constraints
+### Commands to perform synthesis with SDC constraints
+
 $dc_shell
 
 $ set target_library /home/pooja/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.db
@@ -1417,6 +1418,13 @@ $ report_qor > report_qor_sdc.txt
 $ report_timing -nets -attributes -input_pins -transition_time -delay_type max > report_setup_sdc.txt
 
 $ report_timing -nets -attributes -input_pins -transition_time -delay_type min > report_hold_sdc.txt
+
+Comparing the QOR report of synthesis with and without sdc:
+
+Command to comapre 2 files is :
+
+$ gvimdiff report_qor.txt report_qor_sdc.txt
+
 
 
 
