@@ -1289,10 +1289,67 @@ $read_lib sky130_fd_sc_hd_tt_025C_1v80.lib.1
 
 ![image](https://github.com/user-attachments/assets/07139255-c80a-44e3-8034-500efec46dd3)
 
+### Lab – Synthesis and Post Synthesis (Gate Level) Simulation
+
+dc_shell is used to synthesize the netlist.
+Before that Install some of the Important packages using below command :
+- $ pip3 install sandpiper-saas
+Generate .v file from .tlv using below command:
+- $sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+
+Below commands to perform the synthesis :-
+
+- $cd VSDBabySoC
+- $dc_shell
+- $ set target_library /home/pooja/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+- $ set link_library {*  /home/pooja/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.db  /home/pooja/VSDBabySoC/src/lib/avsdpll.db  /home/pooja/VSDBabySoC/src/lib/avsddac.db }
+- $ set search_path {/home/pooja/VSDBabySoC/src/include/ /home/pooja/VSDBabySoC/src/module/}
+- $ read_file {sandpiper_gen.vh  sandpiper.vh  sp_default.vh  sp_verilog.vh clk_gate.v rvmyth.v rvmyth_gen.v vsdbabysoc.v} -autoread -top vsdbabysoc 
+- $link
+- $compile_ultra
+- $ write_file -format verilog -hierarchy -output /home/pooja/VSDBabySoC/output/vsdbabysoc_net.v
+- $ report_qor > report_qor.txt
+
+Read the design
+
+![image](https://github.com/user-attachments/assets/02ea26b4-95e9-458a-aa3c-8e591dbd3934)
+
+Link the design
+
+![image](https://github.com/user-attachments/assets/2d0516eb-b62a-4c76-94c2-2e0e46e71350)
+
+![image](https://github.com/user-attachments/assets/871d0db8-69ea-4eeb-ae1f-c248d55779ef)
+
+QOR Report :-
+
+![image](https://github.com/user-attachments/assets/ae34c495-4fd3-488d-9193-82a18758a3e8)
+
+![image](https://github.com/user-attachments/assets/efa2e6b9-9356-42c3-b9c0-6ad3cc971dc6)
+
+![image](https://github.com/user-attachments/assets/59997217-e2b5-49b1-9be9-d07aa55ea0b6)
+
+Commands to perform Post-synthesis simulation 
+- $ iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 -o ./output/post_synth_sim.out ./src/gls_model/primitives.v ./src/gls_model/sky130_fd_sc_hd.v ./output/vsdbabysoc_net.v ./src/module/avsdpll.v ./src/module/avsddac.v ./src/module/testbench.v
+
+![image](https://github.com/user-attachments/assets/f3e2901e-e7a9-4242-bb7f-06052baa7649)
+
+After fixing Errors
+
+![image](https://github.com/user-attachments/assets/97d7e067-9ca5-4f40-98e0-297d84de578c)
+
+- $ ./post_synth_sim.out
+- $ gtkwave dump.vcd
+
+  Post-synthesis simulation waveform
+
+  ![image](https://github.com/user-attachments/assets/15ca41b1-5e53-4876-b2bd-2c0503e62800)
+
+  Pre-Synthesis Simulation waveform
+
+  ![image](https://github.com/user-attachments/assets/d89ffc6a-0e80-4b2a-b042-9e1f761e87e6)
 
 
-
-
+Both Pre-synthesis and Post synthesis simulation waveforms are same.
 
 
 
