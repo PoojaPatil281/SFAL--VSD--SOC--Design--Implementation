@@ -1360,7 +1360,9 @@ Path of constraint file : /home/pooja/VSDBabySoC/src/sdc/ vsdbabysoc_synthesis.s
 Add following constraints in the vsdbabysoc_synthesis.sdc file
 
 $set_units -time ns
+
 $set_max_area 8000
+
 $set_load -pin_load 0.5 [get_ports OUT]
 $set_load -min -pin_load 0.5 [get_ports OUT]
 $create_clock [get_pins pll/CLK] -name clk -period 10 -waveform {0 5}
