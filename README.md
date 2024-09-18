@@ -1439,62 +1439,6 @@ In synthesis with sdc, optimization is performed ,slack value is updated and has
 
 Timing report for hold with sdc (report_hold_sdc.txt)
 
-$ ************************
-Report : timing
-        -path full
-        -delay min
-        -input_pins
-        -nets
-        -max_paths 1
-        -transition_time
-Design : vsdbabysoc
-Version: T-2022.03-SP5-6
-Date   : Wed Sep 18 13:50:45 2024
-****************************************
-
-Operating Conditions: tt_025C_1v80   Library: sky130_fd_sc_hd__tt_025C_1v80
-Wire Load Model Mode: top
-
-  Startpoint: core/CPU_imm_a2_reg[6]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: core/CPU_imm_a3_reg[6]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  vsdbabysoc         Small                 sky130_fd_sc_hd__tt_025C_1v80
-
-Attributes:
-    d - dont_touch
-    u - dont_use
-   mo - map_only
-   so - size_only
-    i - ideal_net or ideal_network
-  inf - infeasible path
-
-  Point                                          Fanout     Trans      Incr       Path      Attributes
-  ------------------------------------------------------------------------------------------------------------
-  clock clk (rise edge)                                                0.00       0.00
-  clock network delay (ideal)                                          3.00       3.00
-  core/CPU_imm_a2_reg[6]/CLK (sky130_fd_sc_hd__dfxtp_1)      0.00      0.00       3.00 r
-  core/CPU_imm_a2_reg[6]/Q (sky130_fd_sc_hd__dfxtp_1)        0.04      0.28       3.28 r
-  core/CPU_imm_a2[6] (net)                         1                   0.00       3.28 r
-  core/CPU_imm_a3_reg[6]/D (sky130_fd_sc_hd__dfxtp_1)        0.04      0.00       3.28 r
-  data arrival time                                                               3.28
-
-  clock clk (rise edge)                                                0.00       0.00
-  clock network delay (ideal)                                          3.00       3.00
-  clock uncertainty                                                    0.50       3.50
-  core/CPU_imm_a3_reg[6]/CLK (sky130_fd_sc_hd__dfxtp_1)                0.00       3.50 r
-  library hold time                                                   -0.04       3.46
-  data required time                                                              3.46
-  ------------------------------------------------------------------------------------------------------------
-  data required time                                                              3.46
-  data arrival time                                                              -3.28
-  ------------------------------------------------------------------------------------------------------------
-  slack (VIOLATED)                                                               -0.18
 
 
 
