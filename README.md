@@ -1439,7 +1439,7 @@ In synthesis with sdc, optimization is performed ,slack value is updated and has
 
 Timing report for hold with sdc (report_hold_sdc.txt)
 
-****************************************
+$ ************************
 Report : timing
         -path full
         -delay min
