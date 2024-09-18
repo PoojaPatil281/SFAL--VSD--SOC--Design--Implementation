@@ -1248,6 +1248,24 @@ Waveform :- DAC output is verified along with OUT.
 ![image](https://github.com/user-attachments/assets/e9ce8c7f-b7e0-4d3b-a279-8f13d06e294f)
 
 
+# Day 8 : Post Synthesis Simulation (GLS) of BabySoC
+Why do pre-synthesis? Why not just do post-synthesis?
+Pre-synthesis simulation is done to check the functionality of the logic.
+Post synthesis simulation / gate level simulation is done after synthesis considering each and every gate delays into account.reports the violations in both functionality and timing.This also show’s the mismatches we are likely to get due to wrong usage of operations and interference of latches.
+Foe ex: using ‘X’ (simulator terms/synthesizer terms) – ‘unknown’/”Don’t care”. - here X in simulation is Don’t care in synthesiszer but not unknown.
+
+Gate Level Simulation (GLS) 
+The term “gate level” refers to the netlist view of a circuit,usually produced by logic synthesis.
+So while RTL simulation is pre-synthesis,GLS is post-synthesis.
+The nelist view is a complete connection list consisting of gates and IP models with full functional and timing behavior.
+RTL simulation is a zero delay environment and events generally occur on the active clock edge. GLS can be zero delay also,but is more often used in unit delay or full mode.
+Gate level simulation is used to boost the confidence regarding implementation of a design and can help verify dynamic circuit behaviour, which cannot be verified accurately by static methods. It is a significant step in the verification process.  
+
+Steps for Post-synthesis simulation
+- 1.	Converting .lib file to .db file
+Libarary files :- avsddac.lib , avsdpll.lib , sky130_fd_sc_hd_tt_025C_1v80.lib
+Conver .lib to .db using Synopsys Library Compiler (Ic_shell).
+$lc_shell
 
 
 
