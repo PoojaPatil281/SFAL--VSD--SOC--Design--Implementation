@@ -1393,6 +1393,31 @@ $set_input_transition -max 0.4 [get_ports ENb_CP]
 
 $set_input_transition -min 0.1 [get_ports ENb_CP]
 
+Commands to perform synthesis with SDC constraints
+$dc_shell
+
+$ set target_library /home/pooja/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+
+$ set link_library {* /home/pooja/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.db /home/pooja/VSDBabySoC/src/lib/avsddac.db  /home/pooja/VSDBabySoC/src/lib/avsdpll.db }
+
+$ set search_path {/home/pooja/VSDBabySoC/src/include/ /home/pooja/VSDBabySoC/src/module/}
+
+$ read_file {sandpiper_gen.vh  sandpiper.vh  sp_default.vh  sp_verilog.vh clk_gate.v rvmyth.v rvmyth_gen.v vsdbabysoc.v} -autoread -top vsdbabysoc
+
+$link
+
+$ read_sdc /home/pooja/VSDBabySoC/src/sdc/vsdbabysoc_synthesis.sdc
+
+$compile_ultra
+
+$ write_file -format verilog -hierarchy -output /home/pooja/VSDBabySoC/output/vsdbabysoc_net_sdc.v
+
+$ report_qor > report_qor_sdc.txt
+
+$ report_timing -nets -attributes -input_pins -transition_time -delay_type max > report_setup_sdc.txt
+
+$ report_timing -nets -attributes -input_pins -transition_time -delay_type min > report_hold_sdc.txt
+
 
 
 
