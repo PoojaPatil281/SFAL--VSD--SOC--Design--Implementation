@@ -1268,6 +1268,21 @@ Libarary files :- avsddac.lib , avsdpll.lib , sky130_fd_sc_hd_tt_025C_1v80.lib
 Conver .lib to .db using Synopsys Library Compiler (Ic_shell).
 $lc_shell
 
+![image](https://github.com/user-attachments/assets/399cd8e3-7496-487c-9a39-57dd04969177)
+
+![image](https://github.com/user-attachments/assets/c381fdcc-756b-44e5-8c8a-de73388f16a0)
+
+After fixing the errors 
+
+![image](https://github.com/user-attachments/assets/8779a6ba-5629-4e78-91de-d07c22c8b3df)
+
+![image](https://github.com/user-attachments/assets/24becffd-80c3-463f-b225-ee49c8cca8d7)
+
+Download latest sky130_fd_sc_hd_tt_025C_1v80.lib file using below command 
+
+$wget https://raw.githubusercontent.com/efabless/skywater-pdk-libs-sky130_fd_sc_hd/master/timing/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+
 
 
 
