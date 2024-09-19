@@ -1439,6 +1439,34 @@ In synthesis with sdc, optimization is performed ,slack value is updated and has
 
 Timing report for hold with sdc (report_hold_sdc.txt)
 
+![image](https://github.com/user-attachments/assets/25bcc731-52ff-406f-8065-402547293685)
+
+Timing report for setup with sdc (report_setup_sdc.txt)
+
+![image](https://github.com/user-attachments/assets/ad71c414-4c70-4cf1-9bb1-5636d7207e55)
+
+Commands to perform Post-synthesis with constraints
+
+$ iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 -o ./output/post_synth_sdc_sim.out ./src/gls_model/primitives.v ./src/gls_model/sky130_fd_sc_hd.v ./output/vsdbabysoc_net_sdc.v ./src/module/avsdpll.v ./src/module/avsddac.v ./src/module/testbench.v
+
+
+![image](https://github.com/user-attachments/assets/6ed15598-8dbc-4f2f-90a8-d618ef169b61)
+
+After fixing errors
+
+![image](https://github.com/user-attachments/assets/9f9ae01e-d5f2-4f80-b8fd-1e3e128e3668)
+
+$cd output
+
+$ ./post_synth_sdc_sim.out
+
+$ gtkwave dump.vcd
+
+Post -synthesis simulation with SDC constraints
+
+![image](https://github.com/user-attachments/assets/94cdd5b3-def5-4807-ae3f-9ec0f0527fa4)
+
+
 
 
 
