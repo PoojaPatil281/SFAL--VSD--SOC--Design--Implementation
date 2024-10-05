@@ -1468,6 +1468,68 @@ Post -synthesis simulation with SDC constraints
 
 # Day 9 : Synopsys DC timing Analysis for different corners
 
+What is PVT?
+PVT stands for Process Voltage and Temperature.Integrated circuits are design in such a way they can work on wide variety of Temperatures and voltages rather than single voltages and temperature including various conditions,electrical setup and user environment.
+What are the corners of PVT?
+In order to make our chip to work after fabrication in all possible conditions,we simulate it at different corners of process,voltage and temperature. These conditions are called corners. All these three parameters directly affect the delay of the cell.Hence we need the simulate the chip to work in all these corners.
+Understanding PVT :-
+- Process : Process variation are caused due to the manufacturing variation like temperature,doping concentration so the deviation in the semiconductor fabrication process are due to these variations.Process variation are also called as  a percentage variation.Process variations means changes in the physical properties of MOSFET.since current flowing through the MOSFET is directly proportional to the mobility and Cox(thickness of metal oxide) and width to length ratio. So if any of these parameters changes that will directly affect the current and Delay decreases as the current increases.these parameters changes when there is a process variation so the process variation affect the RC,Cox,dimensions of the transistors,fluctuations in the doping and mobility.These parameters can also cause threshold volatge to deviate from its predicted value.
+- Voltage : volatge variation is due to the supply voltage deviates from its optimal value.Any semiconductor chip’s operating voltage is supplied from the outside voltage source only.Power network is used to deliver power to the tansistors in the chip.However the power supply on the chip is not contineous so the power supply varies depending on where the cells are placed.IR drop is also a cause of supply voltage variation.we know that,
+V = L (dI/dt),L stands for Inductance and I is current.so change in the inductance can cause Voltage drop.
+
+- Temperature :- Temperature variation affects the timing that can directly affect the performance.temperation variation is also related to the MOS transistor power dissipation.power dissipation is caused by switching and leakage and due to the short circuit.
+
+PVT Graphs :-
+
+![image](https://github.com/user-attachments/assets/e53dea4f-c837-4a03-87df-9b22b3ca400e)
+
+- Process garph:- Process variation is different for different technology.It is more dominent for lower technology because the transistors are more in the lower node.process variation is due to the manufacturing conditions.different transistors will have different length so will have different propagation delay throughout the chip.smaller transistor is faster hence less propagtion delay.
+  
+- Voltage graph :- supply voltage given to the chip from DC or voltage regulator so the voltage regulator will not give the same voltage all the time.It can go above and below to the expected voltage.when there is a voltage variation it can make the circuit slower and faster. Delay of the cell is depends on the saturation current and the saturation current of the cell depends on the power supply.hence the power supply affects the propagation delay of the cell.
+
+- Temperature graph:-with increase in temperature,resistivity of the conductor also increases.The reason is with increase in temperature the thermal vibrations also increase.This gives rise to electrons scattering and electrons starts colliding on each other because of this mobility of primarary carriers decreases with an increase in temperature. For higher doping concentration thee temperature is higher and also the thermal vibration also increases and the electrons and holes moves slower.when mobility decreases propagation delay increases.so propagation delay increases with increase in temperature.For higer temperature threshold voltage decreases.lower threshold voltage means higher current and better the delay performance.
+
+### Synthesizing BabySoc for different PVT corners to find out WNS and WHS :-
+
+Download .lib files from following repository in the path /home/pooja/VSDBabySoc/src/timing_libs
+https://github.com/efabless/skywater-pdk-libs-sky130_fd_sc_hd/tree/master/timing 
+we are using sky10PDK PVT libs in our design.
+
+![image](https://github.com/user-attachments/assets/32ae4371-531a-4a1b-8379-92213d44b862)
+
+![image](https://github.com/user-attachments/assets/c7ac05e5-7e74-43e7-a88d-dd2a194149da)
+
+Now convert all .lib file format to .db file format.To convert .lib to .db use lc_shell to tool.
+Invoking lc_shell tool 
+
+$LC_SHELL_PATH="/usr/synopsys/lc/T-2022.03-SP5/bin/lc_shell"
+$TCL_SCRIPT="convert_lib_to_db.tcl"
+$LC_SHELL_PATH -f $TCL_SCRIPT
+
+Write a tcl script to covert all .lib file format to .db file format
+$set lib_files_dir "/home/pooja/VSDBabySoC/src/timing_libs/skywater-pdk-libs-sky130_fd_sc_hd/timing/"
+$ set db_output_dir "/home/pooja/VSDBabySoC/src/timing_libs/skywater-pdk-libs-sky130_fd_sc_hd/all_db_files/"
+
+![image](https://github.com/user-attachments/assets/b9e21533-eece-4afc-9a0b-1c83f53fecdf)
+
+Invoke dc_Shell in the path /home/pooja/VSDBabySoC/src where timing_multi_pvt_corners.tcl file is present and execute tcl script 
+$dc_shell
+
+Script to perform synthesis with SDC constraints with Multi PVT corners 
+
+![image](https://github.com/user-attachments/assets/eb80e8b2-a3f7-4e45-911c-dc433ead0f1b)
+
+![image](https://github.com/user-attachments/assets/02207664-b5f2-40f3-be26-0e96157042c9)
+
+![image](https://github.com/user-attachments/assets/f80674d3-0753-4562-b06f-db55a5334e3c)
+
+Graph for Worst Negative Slack (WNS) : setup
+
+![image](https://github.com/user-attachments/assets/d1da4931-8009-4ed5-a914-cc03bcec3ee2)
+
+Graph for Worst Hold Slack(WHS) : hold
+
+![image](https://github.com/user-attachments/assets/d190ae76-cdc0-4644-89f4-eee38fdd3512)
 
 
 
