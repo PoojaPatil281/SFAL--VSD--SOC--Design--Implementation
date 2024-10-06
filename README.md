@@ -1507,7 +1507,9 @@ $TCL_SCRIPT="convert_lib_to_db.tcl"
 $LC_SHELL_PATH -f $TCL_SCRIPT
 
 Write a tcl script to covert all .lib file format to .db file format
-$set lib_files_dir "/home/pooja/VSDBabySoC/src/timing_libs/skywater-pdk-libs-sky130_fd_sc_hd/timing/"
+
+$ set lib_files_dir "/home/pooja/VSDBabySoC/src/timing_libs/skywater-pdk-libs-sky130_fd_sc_hd/timing/"
+
 $ set db_output_dir "/home/pooja/VSDBabySoC/src/timing_libs/skywater-pdk-libs-sky130_fd_sc_hd/all_db_files/"
 
 ![image](https://github.com/user-attachments/assets/b9e21533-eece-4afc-9a0b-1c83f53fecdf)
